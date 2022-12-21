@@ -19,7 +19,7 @@
         app:layout_constraintBottom_toTopOf="@id/btn_access"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-    <!--Button on which we apply OnClickListener -->
+    <!--Button on which we apply OnClickListener to opening the gallery -->
     <Button
         android:id="@+id/btn_access"
         android:layout_width="200dp"
