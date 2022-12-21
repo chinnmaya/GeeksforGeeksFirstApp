@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Here we use Constraintlayout -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,27 +7,19 @@
     android:layout_gravity="center"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolBarExcercise"
-        android:theme="@style/ToolbarTheme"
-        android:gravity="center"
-        android:background="@color/white"
-        app:titleTextColor="@color/green"
-        android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </androidx.appcompat.widget.Toolbar>
+    <!--ImageView for displaying the image that you select from the gallery -->
     <ImageView
+        android:layout_marginTop="100dp"
         android:id="@+id/background"
-        app:layout_constraintTop_toBottomOf="@id/toolBarExcercise"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_margin="10dp"
-
-
-       />
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_access"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <!--Button on which we apply OnClickListener -->
     <Button
         android:id="@+id/btn_access"
         android:layout_width="200dp"
@@ -34,8 +27,6 @@
         android:text="Acess Images"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintTop_toBottomOf="@id/background"/>
-
-
+        app:layout_constraintTop_toBottomOf="@id/background"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
