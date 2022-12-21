@@ -15,7 +15,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.accessdata.databinding.ActivityMainBinding
 /*
-*In this project i used VIEW BINDING
+*In this project we used VIEW BINDING
  */
 class MainActivity : AppCompatActivity() {
     private  var binding:ActivityMainBinding?=null//creating an varriable for view binding
@@ -31,11 +31,10 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
     /** Here we create an ActivityResultLauncher with MultiplePermissions so we can request for multiple permission like location storage etc
      * For this project we use only storage permission
      */
-    val requestpermissionn:ActivityResultLauncher<Array<String>> =registerForActivityResult(
+    val requestpermission:ActivityResultLauncher<Array<String>> =registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()){
         /**
          *->Here it returns a Map of permission name as key with boolean as value
@@ -63,7 +62,6 @@ class MainActivity : AppCompatActivity() {
 
     }
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityMainBinding.inflate(layoutInflater)
@@ -99,8 +97,7 @@ class MainActivity : AppCompatActivity() {
             /*Here we can add multiple permission but for this project only add storage permission to access the data i,e:android.Manifest.permission.READ_EXTERNAL_STORAGE
              *since it is an array of permission you can add multiple permission as per your requirments
              */
-            requestpermissionn.launch(arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE))
-
+            requestpermission.launch(arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE))
         }
     }
 }
